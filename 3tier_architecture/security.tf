@@ -17,7 +17,7 @@ resource "aws_security_group" "alb_sg" {
   }
 }
 
-# App Security Group: Only allows traffic from the ALB on Port 5000 (Flask)
+# App Security Group: Only allows traffic from the ALB on Port 5000 
 resource "aws_security_group" "app_sg" {
   name        = "app-sg"
   vpc_id      = aws_vpc.main.id

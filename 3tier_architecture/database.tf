@@ -10,9 +10,9 @@ resource "aws_db_instance" "app_db" {
   instance_class         = "db.t3.micro"
   db_name                = "appdata"
   username               = "admin"
-  password               = "securepassword123" # In production, use AWS Secrets Manager!
+  password               = "securepassword123"
   db_subnet_group_name   = aws_db_subnet_group.db_subnet.name
-  vpc_security_group_ids = [aws_security_group.db_sg.id] # (Assume db_sg is created allowing port 3306 from app_sg)
+  vpc_security_group_ids = [aws_security_group.db_sg.id] 
   skip_final_snapshot    = true
 }
 
