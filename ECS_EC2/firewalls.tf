@@ -23,8 +23,7 @@ resource "aws_security_group" "ec2_sg" {
   description = "Allow traffic ONLY from ALB"
   vpc_id      = aws_vpc.ecs_vpc.id
 
-  # Dynamic Port Mapping requires opening all ephemeral ports (0-65535)
-  # allow traffic from Load Balancer
+ # allow traffic from Load Balancer
   ingress {
     from_port       = 0
     to_port         = 65535
