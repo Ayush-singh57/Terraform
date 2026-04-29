@@ -1,0 +1,3 @@
+Cloud computing refers to the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale. It eliminates the need for organizations to invest heavily in physical infrastructure.
+
+DevOps is a cultural and professional movement that stresses communication, collaboration, integration, and automation among software developers and IT operations professionals. It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
