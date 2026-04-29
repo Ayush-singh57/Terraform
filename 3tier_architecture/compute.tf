@@ -1,6 +1,4 @@
-# ------------------------------------------------------------------------------
 # APPLICATION LOAD BALANCER (Public)
-# ------------------------------------------------------------------------------
 resource "aws_lb" "app_alb" {
   name               = "app-alb"
   internal           = false
@@ -37,9 +35,7 @@ resource "aws_lb_listener" "front_end" {
   }
 }
 
-# ------------------------------------------------------------------------------
 # LAUNCH TEMPLATE & AUTO SCALING GROUP (Private)
-# ------------------------------------------------------------------------------
 data "aws_ami" "amazon_linux_2023" {
   most_recent = true
   owners      = ["amazon"]
