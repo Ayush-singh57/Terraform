@@ -187,29 +187,6 @@ To change region, modify the provider blocks or use `-var` flag.
    ```bash
    terraform destroy
    ```
-
----
-
-## 📊 Architecture Comparison
-
-| Module | Tier | Complexity | Use Case |
-|--------|------|-----------|----------|
-| **3tier_architecture** | 3-tier | High | Production web apps |
-| **ECS_EC2** | Containerized | Medium-High | Microservices, containers |
-| **basics/IAM** | Identity | Low | User management |
-| **basics/s3** | Storage | Low | Object storage, backups |
-
----
-
-## 📝 Best Practices Implemented
-
-1. **High Availability** - Multi-AZ deployments across 2 availability zones
-2. **Security** - Separate subnets for each tier, restrictive security groups
-3. **Scalability** - Auto Scaling Groups for automatic instance management
-4. **Infrastructure as Code** - Version-controlled, reproducible deployments
-5. **Variable Management** - Sensitive data (passwords) handled securely
-6. **Health Checks** - Load balancers perform continuous health monitoring
-
 ---
 
 ## 🔑 Key Variables & Outputs
