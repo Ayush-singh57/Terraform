@@ -19,7 +19,7 @@ resource "aws_launch_template" "ecs_ec2" {
   
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
-  # This script injects the Cluster Name into the EC2 instance so it registers automatically
+  #  Cluster Name into the EC2 instance so it registers automatically
   user_data = base64encode(<<-EOF
               #!/bin/bash
               echo ECS_CLUSTER=${aws_ecs_cluster.main.name} >> /etc/ecs/ecs.config

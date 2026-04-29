@@ -1,4 +1,4 @@
-# This one is for vpc and subnets, IA, routing all related to networking 
+# This one is for vpc and subnets
 resource "aws_vpc" "ecs_vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_support   = true
