@@ -265,13 +265,6 @@ app/ (Dependency: Used by 3tier_architecture)
 
 ---
 
-## 📞 Support & Documentation
-
-- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-- [AWS Best Practices](https://docs.aws.amazon.com/)
-- Review `terraform.tfstate` files for resource details and outputs
-
----
 
 ## 📌 Notes
 
