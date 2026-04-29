@@ -189,7 +189,7 @@ To change region, modify the provider blocks or use `-var` flag.
    ```
 ---
 
-## 🔑 Key Variables & Outputs
+##  Key Variables & Outputs
 
 ### 3-Tier Architecture Variables:
 - `aws_region` - AWS deployment region (default: ap-south-1)
@@ -205,7 +205,7 @@ To change region, modify the provider blocks or use `-var` flag.
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 - **Module not initializing?** - Run `terraform init` from the module directory
 - **Permission denied?** - Check AWS credentials: `aws sts get-caller-identity`
