@@ -155,7 +155,7 @@ terraform apply
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Terraform installed (v1.0+)
@@ -214,7 +214,7 @@ To change region, modify the provider blocks or use `-var` flag.
 
 ---
 
-## 📚 Module Dependencies
+## Module Dependencies
 
 ```
 3tier_architecture (Independent)
@@ -243,7 +243,7 @@ app/ (Dependency: Used by 3tier_architecture)
 ---
 
 
-## 📌 Notes
+##  Notes
 
 - **State Files:** `.tfstate` and `.tfstate.backup` files are committed to track resource state. In production, use remote state (S3, Terraform Cloud)
 - **Sensitive Data:** Database passwords are marked as sensitive and not displayed in console output
