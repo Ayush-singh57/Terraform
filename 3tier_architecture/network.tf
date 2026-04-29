@@ -4,7 +4,7 @@ resource "aws_vpc" "main" {
   tags = { Name = "3-tier-vpc" }
 }
 
-# Example of one Public Subnet (You would typically create two for high availability)
+#one Public Subnet
 resource "aws_subnet" "public_1a" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
@@ -12,14 +12,14 @@ resource "aws_subnet" "public_1a" {
   map_public_ip_on_launch = true
 }
 
-# Example of one Private App Subnet
+#one Private App Subnet
 resource "aws_subnet" "private_app_1a" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = "ap-south-1a"
 }
 
-# Example of one Private DB Subnet
+#one Private DB Subnet
 resource "aws_subnet" "private_db_1a" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.3.0/24"
@@ -48,22 +48,20 @@ resource "aws_subnet" "private_db_1b" {
   availability_zone = "ap-south-1b"
 }
 
-# ------------------------------------------------------------------------------
 # INTERNET GATEWAY & ROUTING
-# ------------------------------------------------------------------------------
 
-# 1. The Internet Gateway (The door to the internet for the VPC)
+# 1. The Internet Gateway
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
   tags   = { Name = "main-igw" }
 }
 
-# 2. Public Route Table (Tells traffic how to reach the IGW)
+# 2. Public Route Table
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = "0.0.0.0/0" # This means "all internet traffic"
+    cidr_block = "0.0.0.0/0" # "all internet traffic"
     gateway_id = aws_internet_gateway.igw.id
   }
   tags = { Name = "public-route-table" }
@@ -80,16 +78,14 @@ resource "aws_route_table_association" "public_1b_assoc" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-# ------------------------------------------------------------------------------
 # NAT GATEWAY & PRIVATE ROUTING
-# ------------------------------------------------------------------------------
 
 # 1. Elastic IP for the NAT Gateway
 resource "aws_eip" "nat_eip" {
   domain = "vpc"
 }
 
-# 2. The NAT Gateway (Must reside in a Public Subnet)
+# 2. The NAT Gateway 
 resource "aws_nat_gateway" "nat_gw" {
   allocation_id = aws_eip.nat_eip.id
   subnet_id     = aws_subnet.public_1a.id
@@ -98,7 +94,7 @@ resource "aws_nat_gateway" "nat_gw" {
   depends_on = [aws_internet_gateway.igw]
 }
 
-# 3. Private Route Table (Directs outbound traffic to the NAT Gateway)
+# 3. Private Route Table=
 resource "aws_route_table" "private_rt" {
   vpc_id = aws_vpc.main.id
 
