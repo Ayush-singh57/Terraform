@@ -10,7 +10,7 @@ resource "aws_ecs_task_definition" "app" {
   container_definitions = jsonencode([
     {
       name      = "my-react-app"
-      image     ="835637956758.dkr.ecr.ap-south-1.amazonaws.com/my-repo:latest" # We use Nginx as a fast placeholder container
+      image     ="835637956758.dkr.ecr.ap-south-1.amazonaws.com/my-repo:latest" # use Nginx \
       cpu       = 256
       memory    = 512
       essential = true
